@@ -1,0 +1,4 @@
+['argentina.png', 'chile.png', 'colombia.png', 'brazil.png']	./sound_dir/k.ogg	3.81469726562e-06	3.11361598969	1.98399090767
+['brazil.png', 'argentina.png', 'chile.png', 'colombia.png']	./sound_dir/k'.ogg	3.11374902725	5.32398700714	1.85913836956
+['chile.png', 'colombia.png', 'brazil.png', 'argentina.png']	./sound_dir/g.ogg	5.32407999039	8.217471838	0.923854887486
+['colombia.png', 'brazil.png', 'argentina.png', 'chile.png']	./sound_dir/n.ogg	8.21756386757	10.6722018719	1.92535150051
