@@ -1,0 +1,28 @@
+#!/usr/bin/perl
+use utf8;
+use Encode::Escape;
+use WWW::Mechanize;
+
+$mech = WWW::Mechanize->new();
+$url = "http://upodn.com/";
+
+$input = $ARGV[0];
+if ($input eq '') {
+    print "A string argument is required";
+}
+else {
+
+    $mech->get($url);
+    $mech->field('intext', $input);
+    $mech->submit();
+
+    binmode(STDOUT, ":utf8");
+    $content = $mech->content();
+    $content =~ m/(<table.*>)(.*)<\/font>/g;
+    $word = $2;
+    $word =~ s/^\s*//;
+    $word =~ s/\s$//;
+    $word =~ s/&#x(\d\d\d\d);/\\x{$1}/g;
+    $word = decode 'unicode-escape', $word;
+    print $word;
+}

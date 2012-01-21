@@ -271,5 +271,4 @@ class Experiment1:
                 '\t' + '%f' % startTime + '\t' + '%f' % endTime + '\t' 
                 + '%f' % soundDuration + '\n')
         f.close()
-        
-    
+
