@@ -13,9 +13,13 @@ from psychopy import core, data, event, visual, gui, sound
 from time import sleep
 from datetime import datetime
 from random import shuffle
+from itertools import permutations
 
 class Experiment1:
     '''Experiment 1 tests the ability of the participants to associate phonological features with images'''
+
+    max_images_per_trial = 4
+    images_multiple = 12 #needs to be a multiple of 12
 
     right_margin = 150
     left_margin = 150
@@ -46,7 +50,7 @@ class Experiment1:
         '''
 
         self.setImageCoordinates(self.right_margin, self.left_margin)
-        self.loadTrialDataFromFile(imageBaseDir='/home/ryan/research/WilsonLab/snodgrass-vanderwart/color/')
+        self.loadTrialDataFromFile(imageBaseDir='/home/ryan/research/WilsonLab/snodgrass-vanderwart/color/', soundBaseDir='/home/ryan/research/WilsonLab/snodgrass-vanderwart/wav/')
         self.createTrialOrder()
         self.clock.reset()
         self.mouse = event.Mouse(visible=True, newPos=None, win=self.win)
@@ -85,8 +89,8 @@ class Experiment1:
         
         #numboxesX should equal numBoxesY and they should both be odd
         # for most experiments
-        self.numboxesX = 3
-        self.numboxesY = 3
+        self.numboxesX = 5
+        self.numboxesY = 5
 
         self.imageCoordinates = []
         self.imageBuffer = 4
@@ -224,7 +228,7 @@ class Experiment1:
 
     def loadTrialDataFromFile(self, filename='./files', imageBaseDir = './image_dir/', soundBaseDir = './sound_dir/'):
         '''
-        Loads the trial data (sounds and images) from the file
+        Loads the trial data (sounds and images) from the file can only load 4 images per page
         filename: the name of the file
         imageBaseDir: the directory where the images are stored
         soundBaseDir: the directory where the sounds are stored
@@ -236,6 +240,7 @@ class Experiment1:
         self.imageObjs = []
         #image file names for results file
         self.imageFileNames = []
+
         #sound objects for play functions
         self.soundObjs = []
         #sound file names for results file
@@ -243,9 +248,19 @@ class Experiment1:
 
         f = open(filename,'r')
 
+        lines = f.read().splitlines()
+        if len(lines) % self.images_multiple != 0:
+            raise Exception("The number of trials must be divisible by %d" % self.images_multiple)
+
+        self.possibleLocations = self.generatePermutations(len(lines))
+
         #analyze the file line by line
-        for line in f.read().splitlines():
+        for line in lines:
             files = line.split(', ')
+
+            if (len(files) > 5):
+                raise Exception("Each line of the stimuli file must be contain a comma separated list of 5 elements. The four image stimuli and the sound stimulus")
+
 
             self.soundFileNames.insert(self.numTrials, files[-1])
             self.soundObjs.insert(self.numTrials,sound.Sound(value = soundBaseDir + files.pop()))
@@ -253,9 +268,12 @@ class Experiment1:
             imageFileName = []
             #image objects for draw function
             imageObj = []
+            
+            #nth image per trial
             n = 0
+            
             for fileName in files:
-
+                
                 id = os.popen("identify %s" % (imageBaseDir + fileName)).read()
                 
                 if id == '':
@@ -269,13 +287,13 @@ class Experiment1:
                     imageObj.append(visual.PatchStim(self.win, 
                                                  tex = imageBaseDir + fileName,
                                                  units=self.units,
-                                                 pos=(self.imageCoordinates[n]),
+                                                 pos=(self.imageCoordinates[self.possibleLocations[self.numTrials][n]]),
                                                  size=(self.boxWidth - self.imageBuffer, (self.boxWidth / (width / height)) - self.imageBuffer)))
                 else:
                     imageObj.append(visual.PatchStim(self.win, 
                                                  tex = imageBaseDir + fileName,
                                                  units=self.units,
-                                                 pos=(self.imageCoordinates[n]),
+                                                 pos=(self.imageCoordinates[self.possibleLocations[self.numTrials][n]]),
                                                  size=((self.boxHeight / (height / width)) - self.imageBuffer, self.boxWidth - self.imageBuffer)))
                 imageFileName.append(fileName)
                 n += 1
@@ -325,7 +343,7 @@ class Experiment1:
         self.drawImages(self.currentTrialNum)
         self.drawCrossHair()
         self.win.flip()
-      #  self.soundObjs[self.currentTrialNum].play()
+        self.soundObjs[self.currentTrialNum].play()
        # sleep(self.currentDuration)
       #  self.drawImages(self.currentTrialNum)
        # self.drawCrossHair(crossColor='white')
@@ -360,4 +378,19 @@ class Experiment1:
         return ((pos[0] + self.absoluteMaxX)/ self.boxWidth - (self.numboxesX / 2), (pos[1] + self.absoluteMaxY) / self.boxHeight - (self.numboxesY / 2))
         
 
-    
+ 
+    def generatePermutations(self, n):
+        n = n / self.images_multiple
+        s = set([0,1,2,3])
+        imageArrangements = list(permutations(s, 2))
+        
+        permutList = []
+
+        for arrangement in imageArrangements:
+            arrangement = list(arrangement)
+            arrangement.extend(s.difference(set(arrangement)))
+            permutList.append(arrangement)
+
+        permutList = permutList * n
+        shuffle(permutList)
+        return permutList

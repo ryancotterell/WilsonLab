@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+open FILE, names;
+
+while(<FILE>) {
+    chomp $_;
+    my $text = lc $_;
+    my $filname = lc $_ . ".wav";
+    print "espeak -v mb-us1 -w $filename $text", "\n\n";
+   # system ("espeak -v mb-us1 -w $filename $text");
+}

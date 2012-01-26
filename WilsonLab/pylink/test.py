@@ -10,7 +10,7 @@ from time import sleep
 from wilsonLab import Experiment1
 
 #setup window
-win = visual.Window(size=(600,600), fullscr=False, screen=0, 
+win = visual.Window(size=(300, 300), fullscr=False, screen=0, 
                     allowGUI=True,
                     allowStencil=False,
                     monitor='testMonitor', 
