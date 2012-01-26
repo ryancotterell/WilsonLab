@@ -8,6 +8,7 @@
 # Provides an Psychopy implementation of phonological experiments conducted
 # at Johns Hopkins University
 
+import os, re
 from psychopy import core, data, event, visual, gui, sound
 from time import sleep
 from datetime import datetime
@@ -56,12 +57,18 @@ class Experiment1:
             self.nextTrial()
             event.clearEvents()
             waiting = True
+            pressed = False
 
             while waiting:
-                print self.boxClicked(self.mouse.getPos())
+                #print self.boxClicked(self.mouse.getPos())
+                
+                if (self.mouse.getPressed()[0]):
+                    pressed = True
+
                 if event.getKeys(['escape']): #quits experiment early
                     core.quit()
-                elif self.mouse.getPressed()[1]: #moves to next trial
+                elif (pressed and not self.mouse.getPressed()[0]): #moves to next trial
+                    pressed = False
                     waiting = False
                     endTime = self.clock.getTime()
                     self.saveToFile(self.currentTrialNum, startTime, endTime, 
@@ -248,11 +255,28 @@ class Experiment1:
             imageObj = []
             n = 0
             for fileName in files:
-                imageObj.append(visual.PatchStim(self.win, 
+
+                id = os.popen("identify %s" % (imageBaseDir + fileName)).read()
+                
+                if id == '':
+                    raise Exception('You need to install ImageMagick')
+
+                m = re.search('([1-9]*)x([1-9]*)',id)
+                width = float(m.group(1))
+                height = float(m.group(2))
+
+                if width > height:
+                    imageObj.append(visual.PatchStim(self.win, 
                                                  tex = imageBaseDir + fileName,
                                                  units=self.units,
                                                  pos=(self.imageCoordinates[n]),
-                                                 size=(self.boxWidth - self.imageBuffer, self.boxHeight - self.imageBuffer)))
+                                                 size=(self.boxWidth - self.imageBuffer, (self.boxWidth / (width / height)) - self.imageBuffer)))
+                else:
+                    imageObj.append(visual.PatchStim(self.win, 
+                                                 tex = imageBaseDir + fileName,
+                                                 units=self.units,
+                                                 pos=(self.imageCoordinates[n]),
+                                                 size=((self.boxHeight / (height / width)) - self.imageBuffer, self.boxWidth - self.imageBuffer)))
                 imageFileName.append(fileName)
                 n += 1
                   
