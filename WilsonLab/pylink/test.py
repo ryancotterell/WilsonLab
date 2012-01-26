@@ -11,10 +11,10 @@ from wilsonLab import Experiment1
 
 #setup window
 win = visual.Window(size=(1366, 768), fullscr=True, screen=0, 
-                    allowGUI=False, 
+                    allowGUI=True,
                     allowStencil=False,
                     monitor='testMonitor', 
-                    color='black', 
+                    color='white', 
                     colorSpace='rgb', 
                     units='pix'
                     )

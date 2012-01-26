@@ -16,8 +16,8 @@ from random import shuffle
 class Experiment1:
     '''Experiment 1 tests the ability of the participants to associate phonological features with images'''
 
-    RIGHT_MARGIN = 50
-    LEFT_MARGIN = 50
+    right_margin = 150
+    left_margin = 150
 
     def __init__(self, win, clock, units=None, name='John Smith'):
         '''Initialize Experiment 1
@@ -44,22 +44,24 @@ class Experiment1:
         displays media, records reaction time
         '''
 
-        self.setImageCoordinates(50, 50)
-        self.loadTrialDataFromFile()
+        self.setImageCoordinates(self.right_margin, self.left_margin)
+        self.loadTrialDataFromFile(imageBaseDir='/home/ryan/research/WilsonLab/snodgrass-vanderwart/color/')
         self.createTrialOrder()
         self.clock.reset()
+        self.mouse = event.Mouse(visible=True, newPos=None, win=self.win)
 
         while self.hasNextTrial():
             startTime = self.clock.getTime()
+            self.mouse.clickReset()
             self.nextTrial()
             event.clearEvents()
             waiting = True
 
             while waiting:
-
+                print self.boxClicked(self.mouse.getPos())
                 if event.getKeys(['escape']): #quits experiment early
                     core.quit()
-                elif event.getKeys(['f','j']): #moves to next trial
+                elif self.mouse.getPressed()[1]: #moves to next trial
                     waiting = False
                     endTime = self.clock.getTime()
                     self.saveToFile(self.currentTrialNum, startTime, endTime, 
@@ -73,38 +75,74 @@ class Experiment1:
         xMargin: the vertical margin
         yMargin: the horizontal margin
         '''
-
-        #to keep the variables in scope
-        absoluteMaxX = None;
-        absoluteMaxY = None;
-        absoluteMinX = None;
-        absoluteMinY = None;
         
+        #numboxesX should equal numBoxesY and they should both be odd
+        # for most experiments
+        self.numboxesX = 3
+        self.numboxesY = 3
+
+        self.imageCoordinates = []
+        self.imageBuffer = 4
+        self.xLineCoord = set([])
+        self.yLineCoord = set([])
+
+ 
+        #TODO Only pix are supported
         #could be set to 
-        if (self.units == 'norm'):
-            absoluteMaxX = 1.0
-            absoluteMaxY = 1.0
-            absoluteMinX = -1.0
-            absoluteMinY = -1.0
-        elif (self.units == 'pix'):
-            absoluteMaxX = self.size[0] / 2.0
-            absoluteMaxY = self.size[1] / 2.0
-            absoluteMinX = -absoluteMaxX
-            absoluteMinY = -absoluteMaxY        
+        #if (self.units == 'norm'):
+        #    self.absoluteMaxX = 1.0
+        #    self.absoluteMaxY = 1.0
+        #    self.absoluteMinX = -1.0
+        #    self.absoluteMinY = -1.0
+        if (self.units == 'pix'):
+            self.absoluteMaxX = self.size[0] / 2
+            self.absoluteMaxY = self.size[1] / 2
+            self.absoluteMinX = -self.absoluteMaxX
+            self.absoluteMinY = -self.absoluteMaxY   
+            self.edgeBuffer = 1
         else:
-            raise Exception('That unit is not supported')
+            raise Exception('Only pix are supported')
             
-        self.width  = (absoluteMaxX - absoluteMinX) / 2.0
-        self.height = (absoluteMaxY - absoluteMinY) / 2.0
-        
-        maxX = absoluteMaxX - self.width   / 2.0 
-        maxY = absoluteMaxY - self.height  / 2.0
-        
-        minX = absoluteMinX +  self.width  / 2.0
-        minY = absoluteMinY +  self.height / 2.0
+        self.boxWidth  = self.size[0] / self.numboxesX
+        self.boxHeight = self.size[1] / self.numboxesY
 
-        self.width -= xMargin
-        self.height -= yMargin
+        boxX = self.absoluteMinX -  self.boxWidth / 2
+        boxY = self.absoluteMinY - self.boxHeight / 2
+        lineX = self.absoluteMinX + self.edgeBuffer
+        lineY = self.absoluteMinY + self.edgeBuffer
+
+        xCount = 0
+        yCount = 0
+        while boxY < self.absoluteMaxY:
+            while boxX < self.absoluteMaxX:
+                self.xLineCoord.add(lineX)
+
+                #determine picture boxes
+                #x = (boxes per row - 3) / 2 
+                #y = (boxes per column - 3) / 2
+                if ((xCount == (self.numboxesX - 3) / 2 + 1 or xCount == self.numboxesX - (self.numboxesX - 3) / 2) and (yCount == (self.numboxesY - 3) / 2 + 1 or yCount == self.numboxesY - (self.numboxesY - 3) / 2)):
+                    self.imageCoordinates.append((boxX, boxY))
+    
+                if (xCount == self.numboxesX / 2 + 1 and yCount == self.numboxesY / 2 + 1):
+                    self.centerBox = (boxX, boxY)                    
+
+                boxX += self.boxWidth
+                lineX += self.boxWidth
+                xCount += 1
+                
+
+            boxX = self.absoluteMinX - self.boxWidth / 2
+            lineX = self.absoluteMinX + self.edgeBuffer
+            xCount = 0
+            self.yLineCoord.add(lineY)
+            lineY += self.boxHeight
+            boxY += self.boxHeight
+            yCount += 1
+
+
+        self.xLineCoord.add(self.absoluteMaxX-self.edgeBuffer)
+        self.yLineCoord.add(self.absoluteMaxY-self.edgeBuffer)
+
         
         #Card Display
         #---------------
@@ -114,9 +152,29 @@ class Experiment1:
         #|   3  |   4  |
         #---------------
 
-        self.imageCoordinates = [(minX,maxY), (maxX,maxY), (minX,minY), (maxX,minY)]
 
+    def drawBoxes(self):
+        
+        for x in self.xLineCoord:
+            tmpLine = visual.ShapeStim(win=self.win,
+                                       units=self.units,
+                                       lineWidth=2.0,
+                                         lineColor='black',
+                                       pos=(0,0),
+                                       vertices=((x, self.absoluteMinY),(x, self.absoluteMaxY)))
+            tmpLine.draw()
+            
+            for y in self.yLineCoord:
+              tmpLine = visual.ShapeStim(win=self.win,
+                                         units=self.units,
+                                         lineWidth=2.0,
+                                         lineColor='black',
+                                         pos=(0,0),
+                                         vertices=((self.absoluteMinX, y),(self.absoluteMaxX,y)))
+              tmpLine.draw()
 
+              
+     
     def drawImages(self, num):
         '''Draw the nth set of images from the loaded
         trial data
@@ -126,33 +184,31 @@ class Experiment1:
         for imageObj in self.imageObjs[num]:
             imageObj.draw()  
         
-    def drawCrossHair(self, x = 0, y = 0, crossColor = 'white'):
-        '''Draws a crosshair in the middle of the screen for the 
-        x: the x coordinate of the crosshair
-        y: the y coordinate of the crosshair
+    def drawCrossHair(self, crossColor = 'black', lineWidth = 2):
+        '''Draws a crosshair in the center box
         crossColor: the color of the crosshair
         '''
-
-        size1 = 0
-        size2 = 0
 
         #determine units
         if (self.units == 'pix'):
             size1 = 2
             size2 = 60
-        elif (self.units == 'norm'):
-            size1 = 0.05
-            size2 = 0.1
+        else:
+            raise Exception('Pix are the only supported units')
+        
+        #elif (self.units == 'norm'):
+        #    size1 = 0.05
+        #    size2 = 0.1
 
         fixation1 = visual.PatchStim(win=self.win,
-                                    pos=(x,y), 
-                                    size=(size1, size2),
+                                    pos=self.centerBox, 
+                                     size=(self.boxWidth / 3, lineWidth),
                                     sf=0,
                                     color=crossColor,
                                     mask=None)
         fixation2 = visual.PatchStim(win=self.win,
-                                     pos=(x,y),
-                                     size=(size2, size1),
+                                     pos=self.centerBox,
+                                     size=(lineWidth, self.boxHeight / 3),
                                      sf=0,
                                      color=crossColor,
                                      mask=None)
@@ -193,10 +249,10 @@ class Experiment1:
             n = 0
             for fileName in files:
                 imageObj.append(visual.PatchStim(self.win, 
-                                                tex = imageBaseDir + fileName,
-                                                units=self.units,
-                                                pos=(self.imageCoordinates[n]),
-                                                size=(self.width, self.height)))
+                                                 tex = imageBaseDir + fileName,
+                                                 units=self.units,
+                                                 pos=(self.imageCoordinates[n]),
+                                                 size=(self.boxWidth - self.imageBuffer, self.boxHeight - self.imageBuffer)))
                 imageFileName.append(fileName)
                 n += 1
                   
@@ -237,16 +293,19 @@ class Experiment1:
         the sound is still playing. When sound finishes playing the cross
         hair turns white and the user may hit any key
         '''
+
+        self.drawBoxes()
+        
         self.currentTrialNum = self.order.pop(0)
         self.currentDuration = self.soundObjs[self.currentTrialNum].getDuration()
         self.drawImages(self.currentTrialNum)
-        self.drawCrossHair(crossColor='red')
+        self.drawCrossHair()
         self.win.flip()
-        self.soundObjs[self.currentTrialNum].play()
-        sleep(self.currentDuration)
-        self.drawImages(self.currentTrialNum)
-       	self.drawCrossHair(crossColor='white')
-        self.win.flip()
+      #  self.soundObjs[self.currentTrialNum].play()
+       # sleep(self.currentDuration)
+      #  self.drawImages(self.currentTrialNum)
+       # self.drawCrossHair(crossColor='white')
+       # self.win.flip()
         
 
     def saveToFile(self,orderNum, startTime, endTime, soundDuration, resultsBaseDir = './results_dir/'):
@@ -272,3 +331,9 @@ class Experiment1:
                 + '%f' % soundDuration + '\n')
         f.close()
 
+
+    def boxClicked(self, pos):
+        return ((pos[0] + self.absoluteMaxX)/ self.boxWidth - (self.numboxesX / 2), (pos[1] + self.absoluteMaxY) / self.boxHeight - (self.numboxesY / 2))
+        
+
+    
