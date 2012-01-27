@@ -1,8 +1,0 @@
-['chile.png', 'colombia.png', 'brazil.png', 'argentina.png']	g.ogg	0.000004	3.197127	0.923855
-['colombia.png', 'brazil.png', 'argentina.png', 'chile.png']	n.ogg	3.197259	5.716476	1.925352
-['argentina.png', 'chile.png', 'colombia.png', 'brazil.png']	k.ogg	5.716568	8.307501	1.983991
-['brazil.png', 'argentina.png', 'chile.png', 'colombia.png']	k'.ogg	8.307601	10.954199	1.859138
-['chile.png', 'colombia.png', 'brazil.png', 'argentina.png']	g.ogg	0.000004	1.910698	0.923855
-['brazil.png', 'argentina.png', 'chile.png', 'colombia.png']	k'.ogg	1.910799	5.769423	1.859138
-['colombia.png', 'brazil.png', 'argentina.png', 'chile.png']	n.ogg	5.769514	8.079198	1.925352
-['argentina.png', 'chile.png', 'colombia.png', 'brazil.png']	k.ogg	8.079293	10.393052	1.983991

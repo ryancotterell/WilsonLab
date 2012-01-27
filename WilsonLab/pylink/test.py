@@ -10,7 +10,7 @@ from time import sleep
 from wilsonLab import Experiment1, Familiarization
 
 #setup window
-win = visual.Window(size=(400, 300), fullscr=True
+win = visual.Window(size=(400, 400), fullscr=False
 
 , screen=0, 
                     allowGUI=True,
@@ -33,12 +33,12 @@ tracker = Tracker_Dummy(win, clock)
 
 
 
-fam = Familiarization(win, clock)
-fam.run()
+#fam = Familiarization(win, clock)
+#fam.run()
 
 
-#x = Experiment1(win, clock)
-#x.run()
+x = Experiment1(win, clock)
+x.run()
 
     
 

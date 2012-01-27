@@ -75,8 +75,7 @@ class Experiment1:
                     pressed = False
                     waiting = False
                     endTime = self.clock.getTime()
-                    self.saveToFile(self.currentTrialNum, startTime, endTime, 
-                                    self.currentDuration)
+                    self.saveToFile(self.currentTrialNum, startTime, endTime, self.boxClicked(self.mouse.getPos()))
 
             
             self.win.flip()
@@ -122,23 +121,24 @@ class Experiment1:
         self.boxHeight = self.size[1] / self.numboxesY
 
         boxX = self.absoluteMinX -  self.boxWidth / 2
-        boxY = self.absoluteMinY - self.boxHeight / 2
+        boxY = self.absoluteMaxY - self.boxHeight / 2
         lineX = self.absoluteMinX + self.edgeBuffer
-        lineY = self.absoluteMinY + self.edgeBuffer
+        lineY = self.absoluteMaxY -  self.edgeBuffer
 
         xCount = 0
         yCount = 0
-        while boxY < self.absoluteMaxY:
+        while boxY > self.absoluteMinY:
             while boxX < self.absoluteMaxX:
                 self.xLineCoord.add(lineX)
 
                 #determine picture boxes
                 #x = (boxes per row - 3) / 2 
                 #y = (boxes per column - 3) / 2
-                if ((xCount == (self.numboxesX - 3) / 2 + 1 or xCount == self.numboxesX - (self.numboxesX - 3) / 2) and (yCount == (self.numboxesY - 3) / 2 + 1 or yCount == self.numboxesY - (self.numboxesY - 3) / 2)):
+                if ((xCount == (self.numboxesX - 3) / 2 + 1 or xCount == self.numboxesX - (self.numboxesX - 3) / 2)
+                    and (yCount == (self.numboxesY / 2) - 1 or yCount == (self.numboxesY / 2) + 1)):  
                     self.imageCoordinates.append((boxX, boxY))
     
-                if (xCount == self.numboxesX / 2 + 1 and yCount == self.numboxesY / 2 + 1):
+                if (xCount == self.numboxesX / 2 + 1  and yCount == self.numboxesY / 2):
                     self.centerBox = (boxX, boxY)                    
 
                 boxX += self.boxWidth
@@ -150,16 +150,14 @@ class Experiment1:
             lineX = self.absoluteMinX + self.edgeBuffer
             xCount = 0
             self.yLineCoord.add(lineY)
-            lineY += self.boxHeight
-            boxY += self.boxHeight
+            lineY -= self.boxHeight
+            boxY -= self.boxHeight
             yCount += 1
 
-
         self.xLineCoord.add(self.absoluteMaxX-self.edgeBuffer)
-        self.yLineCoord.add(self.absoluteMaxY-self.edgeBuffer)
+        self.yLineCoord.add(self.absoluteMinY + self.edgeBuffer)
 
-        
-        #Card Display
+        #Display
         #---------------
         #|   1  |   2  |
         #|______|______|
@@ -260,11 +258,11 @@ class Experiment1:
 
         #analyze the file line by line
         for line in lines:
+
             files = line.split(', ')
 
             if (len(files) > 5):
                 raise Exception("Each line of the stimuli file must be contain a comma separated list of 5 elements. The four image stimuli and the sound stimulus")
-
 
             self.soundFileNames.append(files[-1])
             self.soundObjs.append(sound.Sound(value = soundBaseDir + files.pop()))
@@ -339,7 +337,7 @@ class Experiment1:
         the sound is still playing. When sound finishes playing the cross
         hair turns white and the user may hit any key
         '''
-
+        self.win.flip()
         self.drawBoxes()
         
         self.currentTrialNum = self.order.pop(0)
@@ -351,7 +349,7 @@ class Experiment1:
         self.soundObjs[self.currentTrialNum].play()
       
 
-    def saveToFile(self,orderNum, startTime, endTime, soundDuration, resultsBaseDir = './results_dir/'):
+    def saveToFile(self,orderNum, startTime, endTime, posClicked, resultsBaseDir = './results_dir/'):
         '''saves the data to the file determined by the participant's names
         and the exact start time of the experiment
         orderNum: the trial num
@@ -369,9 +367,8 @@ class Experiment1:
         fileName = baseFileName + self.experimentTime + '.txt'
 
         f = open(resultsBaseDir + fileName, 'a')
-        f.write(str(self.imageFileNames[orderNum]) + '\t' + str(self.soundFileNames[orderNum]) + 
-                '\t' + '%f' % startTime + '\t' + '%f' % endTime + '\t' 
-                + '%f' % soundDuration + '\n')
+        f.write(str(self.imageFileNames[orderNum]) + '\t' + str(self.possibleLocations[orderNum]) + '\t' +  str(self.soundFileNames[orderNum]) + 
+                '\t\t' + '%f' % startTime + '\t' + '%f' % endTime + '\t' + str(posClicked) + '\n')
         f.close()
 
 

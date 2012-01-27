@@ -1,3 +1,0 @@
-['argentina.png', 'chile.png', 'colombia.png', 'brazil.png']	k.ogg	0.000004	3.140204	1.983991
-['colombia.png', 'brazil.png', 'argentina.png', 'chile.png']	n.ogg	3.140327	5.572439	1.925352
-['chile.png', 'colombia.png', 'brazil.png', 'argentina.png']	g.ogg	5.572535	7.835238	0.923855
