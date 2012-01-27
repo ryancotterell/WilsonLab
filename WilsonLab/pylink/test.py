@@ -7,10 +7,12 @@ import pylink
 from eyeTracker import Tracker_EyeLink, Tracker_Dummy, EyeLinkCoreGraphicsPsychopy
 from psychopy import core, data, event, visual, gui
 from time import sleep
-from wilsonLab import Experiment1
+from wilsonLab import Experiment1, Familiarization
 
 #setup window
-win = visual.Window(size=(300, 300), fullscr=False, screen=0, 
+win = visual.Window(size=(400, 300), fullscr=True
+
+, screen=0, 
                     allowGUI=True,
                     allowStencil=False,
                     monitor='testMonitor', 
@@ -30,8 +32,13 @@ tracker = Tracker_Dummy(win, clock)
 #test = EyeLinkCoreGraphicsPsychopy(tracker, win, 1000)
 
 
-x = Experiment1(win, clock)
-x.run()
+
+fam = Familiarization(win, clock)
+fam.run()
+
+
+#x = Experiment1(win, clock)
+#x.run()
 
     
 

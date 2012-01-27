@@ -66,7 +66,7 @@ class Experiment1:
             while waiting:
                 #print self.boxClicked(self.mouse.getPos())
                 
-                if (self.mouse.getPressed()[0]):
+                if (self.mouse.getPressed()[0] and self.clock.getTime() > self.soundStop):
                     pressed = True
 
                 if event.getKeys(['escape']): #quits experiment early
@@ -78,6 +78,10 @@ class Experiment1:
                     self.saveToFile(self.currentTrialNum, startTime, endTime, 
                                     self.currentDuration)
 
+            
+            self.win.flip()
+            self.win.flip()
+            sleep(2) #intertrial period
         self.win.flip()
         
     def setImageCoordinates(self, xMargin = 0.0, yMargin = 0.0):
@@ -262,8 +266,8 @@ class Experiment1:
                 raise Exception("Each line of the stimuli file must be contain a comma separated list of 5 elements. The four image stimuli and the sound stimulus")
 
 
-            self.soundFileNames.insert(self.numTrials, files[-1])
-            self.soundObjs.insert(self.numTrials,sound.Sound(value = soundBaseDir + files.pop()))
+            self.soundFileNames.append(files[-1])
+            self.soundObjs.append(sound.Sound(value = soundBaseDir + files.pop()))
  
             imageFileName = []
             #image objects for draw function
@@ -340,15 +344,12 @@ class Experiment1:
         
         self.currentTrialNum = self.order.pop(0)
         self.currentDuration = self.soundObjs[self.currentTrialNum].getDuration()
+        self.soundStop = self.clock.getTime() + self.currentDuration
         self.drawImages(self.currentTrialNum)
         self.drawCrossHair()
         self.win.flip()
         self.soundObjs[self.currentTrialNum].play()
-       # sleep(self.currentDuration)
-      #  self.drawImages(self.currentTrialNum)
-       # self.drawCrossHair(crossColor='white')
-       # self.win.flip()
-        
+      
 
     def saveToFile(self,orderNum, startTime, endTime, soundDuration, resultsBaseDir = './results_dir/'):
         '''saves the data to the file determined by the participant's names
@@ -394,3 +395,92 @@ class Experiment1:
         permutList = permutList * n
         shuffle(permutList)
         return permutList
+
+class Familiarization:
+
+    def __init__(self, win, clock, units=None):
+        self.win = win
+        self.clock = clock
+        self.units = units
+        self.mouse = event.Mouse(visible=True, newPos=None, win=self.win)
+
+        if (self.units == None):
+            self.units = self.win.units
+
+    def loadFamiliarization(self, filename='./familiarization', imageBaseDir = './image_dir'):
+        
+        self.familiarizationNames = []
+        self.familiarizationImages = []
+
+        percentOfSize = 1.5
+        imageHeight = 0
+        imageBuffer = 50
+        fontSize = 60
+
+        f = open(filename, 'r')
+        lines = f.read().splitlines()
+
+        for line in lines:
+            elements = line.split(', ')
+
+    
+            #
+            #
+            #this is repeated code and should be abstracted out into 
+            #another class. a utlity class should be created
+
+
+            id = os.popen("identify %s" % (imageBaseDir + elements[1])).read()
+            
+            if id == '':
+                raise Exception('You need to install ImageMagick')
+            
+            m = re.search('([1-9]*)x([1-9]*)',id)
+            width = float(m.group(1))
+            height = float(m.group(2))
+
+            if (width > height):
+                self.familiarizationImages.append(visual.PatchStim(win=self.win,
+                                                               tex = imageBaseDir + elements[1],
+                                                               units = self.units,
+                                                               pos=(0,0),
+                                                               size = (self.win.size[0] / 1.5, (self.win.size[1] / 1.5) / (width / height))))
+                imageHeight = (self.win.size[1] / 1.5) / (width / height)
+            else:
+                self.familiarizationImages.append(visual.PatchStim(win=self.win,
+                                                               tex = imageBaseDir + elements[1],
+                                                               units = self.units,
+                                                               pos=(0,0),
+                                                               size = ((self.win.size[0] / 1.5) / (height / width), self.win.size[1] / 1.5)))
+                imageHeight = self.win.size[1] / 1.5
+
+
+            self.familiarizationNames.append(visual.TextStim(win = self.win,
+                                                         text=elements[0],
+                                                         units = self.units,
+                                                         pos = (0,-(imageHeight / 2) - imageBuffer),
+                                                         color = 'black',
+                                                         height = fontSize))
+
+                
+                                                                          
+
+    def run(self):
+        self.loadFamiliarization(imageBaseDir='/home/ryan/research/WilsonLab/snodgrass-vanderwart/color/')
+
+        for i in range(0, len(self.familiarizationImages)):
+            self.win.flip()
+            self.familiarizationImages[i].draw()
+            self.familiarizationNames[i].draw()
+            self.win.flip()
+            waiting = True
+
+            while waiting:
+                
+               if event.getKeys(['escape']): #quits experiment early
+                   core.quit()
+               elif event.getKeys(['space']):
+                   waiting = False
+                   
+
+        
