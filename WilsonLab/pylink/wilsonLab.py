@@ -411,7 +411,7 @@ class Familiarization:
         self.familiarizationNames = []
         self.familiarizationImages = []
 
-        percentOfSize = 1.5
+        percentOfSize = .5
         imageHeight = 0
         imageBuffer = 50
         fontSize = 60
@@ -443,15 +443,15 @@ class Familiarization:
                                                                tex = imageBaseDir + elements[1],
                                                                units = self.units,
                                                                pos=(0,0),
-                                                               size = (self.win.size[0] / 1.5, (self.win.size[1] / 1.5) / (width / height))))
-                imageHeight = (self.win.size[1] / 1.5) / (width / height)
+                                                               size = (self.win.size[0] * percentOfSize, (self.win.size[1] * percentOfSize) / (width / height))))
+                imageHeight = (self.win.size[1] * percentOfSize) / (width / height)
             else:
                 self.familiarizationImages.append(visual.PatchStim(win=self.win,
                                                                tex = imageBaseDir + elements[1],
                                                                units = self.units,
                                                                pos=(0,0),
-                                                               size = ((self.win.size[0] / 1.5) / (height / width), self.win.size[1] / 1.5)))
-                imageHeight = self.win.size[1] / 1.5
+                                                               size = ((self.win.size[0] * percentOfSize) / (height / width), self.win.size[1] * percentOfSize)))
+                imageHeight = self.win.size[1] * percentOfSize
 
 
             self.familiarizationNames.append(visual.TextStim(win = self.win,

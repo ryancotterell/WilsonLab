@@ -41,6 +41,7 @@ while (<FILE>) {
 
 open WORDSFILE, ">", "files_in_words";
 open FILE, ">", "files";
+open FAMILIARIZATION, ">", "famlizarization";
 for (1..($num_stims / 4)) {
     my $conditionA = pop(@conditionA);
     my $conditionB = pop(@conditionB);
@@ -53,4 +54,8 @@ for (1..($num_stims / 4)) {
 
     print FILE $conditionA . ".png, " . $conditionB . ".png, " . $other1 . ".png, " . $other2 . ".png, " . $conditionA . ".wav\n";
 
+    print FAMILIARIZATION $conditionAWords{$conditionA} . ", " . $conditionA . ".png\n";
+    print FAMILIARIZATION $conditionBWords{$conditionB} . ", " . $conditionB . ".png\n";
+    print FAMILIARIZATION $otherWords{$other1} . ", " . $other1 . ".png\n";
+    print FAMILIARIZATION $otherWords{$other2} . ", " . $other2 . ".png\n";
 }

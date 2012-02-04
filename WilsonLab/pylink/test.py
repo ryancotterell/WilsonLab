@@ -32,8 +32,8 @@ tracker = Tracker_Dummy(win, clock)
 
 
 
-#fam = Familiarization(win, clock)
-#fam.run()
+fam = Familiarization(win, clock)
+fam.run()
 
 
 x = Experiment1(win, clock)
