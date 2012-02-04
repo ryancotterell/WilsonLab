@@ -1,0 +1,572 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()])</script>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- pageon: gallery -->
+    <title>480 normative images - BOSS&#039; Photos</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="description" content="Billions of happy photos, millions of passionate customers. Gorgeous online photo albums. Protect your priceless memories. Buy beautiful prints & gifts.">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta name="robots" content="all, index, follow, noodp, noydir">
+    <meta http-equiv="imagetoolbar" content="no">
+    <link rel="SHORTCUT ICON" href="/favicon.ico">
+    <link rel="alternate" type="application/json+oembed" title="480 normative images oEmbed Profile" href="http://api.smugmug.com/services/oembed/?url=http%3A%2F%2Fboss.smugmug.com%2FOther%2F480-normalized-photos%2F9484560_B6pGVC&amp;format=json">
+    <link rel="alternate" type="application/xml+oembed" title="480 normative images oEmbed Profile" href="http://api.smugmug.com/services/oembed/?url=http%3A%2F%2Fboss.smugmug.com%2FOther%2F480-normalized-photos%2F9484560_B6pGVC&amp;format=xml">
+    <link rel="alternate" type="application/atom+xml" title="SmugMug: BOSS > 480 normative images Atom feed" href="/hack/feed.mg?Type=gallery&amp;Data=9484560_B6pGVC&amp;format=atom10">
+    <link rel="alternate" type="application/rss+xml" title="SmugMug: BOSS > 480 normative images RSS feed" href="/hack/feed.mg?Type=gallery&amp;Data=9484560_B6pGVC&amp;format=rss200">
+    <link type="text/css" rel="stylesheet" id="yui_core" href="http://cdn.smugmug.com/include/css/other//other/yui_core-26a4c3a0887e7092c76f281d4c710e85-stretch.css">
+    <link type="text/css" rel="stylesheet" id="smugmugBlackCSS" href="http://cdn.smugmug.com/include/css/other//other/smugmugBlack_bundle-8a319b2fb591a9e2bdf1df3b873fb3cc-stretch.css">
+    <link type="text/css" rel="stylesheet" id="pureSmugBlack" href="http://cdn.smugmug.com/include/css/other//other/pureSmugBlack-20110826110042-stretch.css">
+    <link type="text/css" rel="stylesheet" class="css stylesheet packagechooser" charset="utf-8" href="http://cdn.smugmug.com/include/css/other//other/packagechooser-20101004155631.css">
+    <link type="text/css" rel="stylesheet" class="css stylesheet core-context_bundle" charset="utf-8" href="http://cdn.smugmug.com/include/css/other//other/smugmug/core-context_bundle-c7ada4d8f4782896b3297d36c52f9908.css">
+    <link type="text/css" rel="stylesheet" class="css stylesheet ezbuilder" charset="utf-8" href="http://cdn.smugmug.com/include/css/other//other/ezbuilder/ezbuilder-20111201173258.css">
+    <script type="text/javascript" id="sm_js_base">
+      //SM namespace
+      if (typeof SM === 'undefined') {
+        var SM = {};
+      }
+      SM.namespace = function() {
+        var a = arguments, o = null, i, j, d;
+        for (i = 0; i < a.length; ++i) {
+          d = a[i].split(".");
+          o = SM;
+          // SM is implied, so it is ignored if it is included
+          for (j = (d[0] === "SM") ? 1 : 0; j < d.length; ++j) {
+            o[d[j]] = o[d[j]] || {};
+            o = o[d[j]];
+          }
+        }
+        return o;
+      };
+      SM.env = SM.env || {};
+      SM.env.js = {
+        base: '/include/',
+        root: 'js/lib/build/', //deprecated, use appRoot, libRoot
+        appRoot: 'js/app/build/',
+        libRoot: 'js/lib/build/'
+      };
+      SM.env.yui2 = {
+        version: '2.8.1',
+        base: '/include/',
+        root: 'yui/2.8.1/',
+        assets: 'assets/',
+        skin: 'skins/sam/'
+      };
+      SM.env.yui3 = {
+        version: '3.4.1',
+        base: '/include/',
+        root: 'yui/3.4.1/',
+        assets: 'assets/',
+        skin: 'skins/sam/'
+      };
+      SM.env.yui2in3 = {
+        version: '2.8.1',
+        base: '/include/',
+        root: 'yui/2in3/2.8.1/',
+        assets: 'assets/',
+        skin: 'skins/sam/'
+      };
+      SM.currentContext = {};
+      SM.hostConfig = {
+        'httpPrefix': 'http://',
+        'mainHost': 'www.smugmug.com',
+        'uploadHost': 'upload.smugmug.com',
+        'cdnHost': 'cdn.smugmug.com',
+        'photosHost': 'photos.smugmug.com',
+        'sessionDomain': '.smugmug.com',
+        'cartUrl': 'https://secure.smugmug.com/cart/',
+        'mapsHost': 'maps.smugmug.com',
+        'readOnly': '',
+        'imgPrefix': 'http://cdn.smugmug.com/img/',
+        'apiHost': 'api.smugmug.com'
+      };
+      // Some quick throw-away variables to detect the page's nickname
+      window._hc = SM.hostConfig;
+      window._nt = new RegExp([_hc.httpPrefix, '(\\w+)\\.', _hc.cdnHost].join('')).exec(document.location.href);
+      SM.hostConfig.nickname = _nt ? _nt[1] : null;
+      try {
+        delete _hc;
+        delete _nt;
+      } catch(e) {
+        /*Ignore IE fail here.*/
+      }
+      SM.appVersion = {
+        'MacDaddy' : '3.0.4.510',
+        'ShizamSlides' : '2011042105',
+        'ninjaLoader' : '2010100701',
+        'ShizVidz' : '2011030702',
+        'clipboardSmuggler' : '2008110602',
+        'yui': SM.env.yui2.version,
+        'flashUploader': '2011102702'
+      };
+      SM.quickShare = {
+        'facebook': true,
+        'twitter': true,
+        'disable': false      };
+      SM.APIKey = {
+        'fbConnect': '7528d1bb7f7a685bc080054d9bc154d2',
+        'fbAppId': '51756880368'
+      };
+      SM.pageDetails = {"Album":{"AlbumID":"9484560","AlbumKey":"B6pGVC"}};
+      SM.md5s = {
+      '/include/js/ga.js': '20110706115937',
+        '/include/js/quantcast.js': '20110706115943',
+        '/include/js/facebook_library.js': '20110623220039'
+      };
+      SM.tracking = {
+        ga: {
+          smugmug: 'UA-138402-3',
+          user: ''
+        },
+        statcounter: {
+        },
+        sitemeter: {
+        },
+        quantcast: {
+          smugmug: 'p-33GsugQTR-pOM'
+        },
+		xgraph: {
+		    on: true,
+			trackConversion: false,
+			plan: false,
+			conversionSid: "53116",
+			defaultSid: "53112"
+		}
+      };
+      var primaryCSScolor = 'Black';
+      try {
+        document.execCommand('BackgroundImageCache', false, true);
+      } catch(err) {
+        // do nothing;
+      }
+      var rightClickWarning = "These photos are copyrighted by their respective owners. All rights reserved. Unauthorized use prohibited.";
+      function rightProtect(e) {
+        if (window.event) {
+          var srcEl = event.srcElement ? event.srcElement : event.target;
+        } else {
+          var srcEl = e.srcElement ? e.srcElement : e.target;
+        }
+        var className = srcEl.className;
+        if (className.indexOf('protected') != -1) {
+          window.alert(rightClickWarning);
+          return false;
+        } else {
+          return true;
+        }
+      }
+      document.oncontextmenu = rightProtect;
+    </script>
+        <script src="http://cdn.smugmug.com/include/js/yui_core-b7196a03ba1c3f39f7267fb5ee781c69.js" class="js script yui_core" type="text/javascript" charset="utf-8"></script>
+        <script src="http://cdn.smugmug.com/include/js/smugmug_core-397a04376efe28c655d776169a441f32.js" class="js script smugmug_core" type="text/javascript" charset="utf-8"></script>
+        <script src="http://cdn.smugmug.com/include/js/mousewheel-min-20100722180110.js" class="js script mousewheel" type="text/javascript" charset="utf-8"></script>
+        <script src="http://cdn.smugmug.com/include/js/scrollbar-min-20100617222651.js" class="js script scrollbar" type="text/javascript" charset="utf-8"></script>
+        <script src="http://cdn.smugmug.com/include/js/packagechooser-min-20110509095854.js" class="js script packagechooser" type="text/javascript" charset="utf-8"></script>
+    <meta property="fb:page_id" content="12550319602" />
+  </head>
+<body class="smugmug_small galleryPage gallery_9484560 tempClass category_Other notLoggedIn pureSmugCSS bodyColor_Black">
+    <script type="text/javascript">
+          (function() {
+            var parts = window.location.href.split("#");
+            if (parts.length < 2 || YD.hasClass(document.body, 'smugmug_ajax')
+            	|| YD.hasClass(document.body, 'singleImage')
+            	|| YD.hasClass(document.body, 'allthumbs_stretch')
+            	|| YD.hasClass(document.body, 'journal_new')) {
+            	return;
+            }
+            if (YD.hasClass(document.body,'galleryPage')
+                || YD.hasClass(document.body,'keywordPage')
+                || YD.hasClass(document.body,'datePage')
+                || YD.hasClass(document.body,'popularGallery')
+                || YD.hasClass(document.body,'popularImage')
+                || YD.hasClass(document.body,'communityKeyword')) {
+                var goHere = SM.util.normalizeURL();
+                if (/(\w+\-[a-zA-Z0-9]+\-LB$)|(&lb=1&s=[a-zA-Z0-9]+)/.test(parts[1])) {
+                    if (parts[1].charAt(0) == '!') {
+                        // If it's a hash bang url, encode it so the ampersands don't break it
+                        parts[1] = '!' + escape(parts[1].substr(1));
+                    }
+                    goHere += ('?c=1#' + parts[1]);
+                }
+                location.href = goHere;
+            }
+          })();
+    </script>
+    <div id="bodyWrapper">
+        <div id="shortLinkHeaderQS" style="z-index:99999;display: none;padding: 6px 15px; height: 24px; font-size: 12px; color: #C5D8F3;  background: transparent url(http://cdn.smugmug.com/img/trial/trial_bar_sprite.png) repeat-x;"><div style="width: 25px; height: 25px; float: right; background: transparent url(http://cdn.smugmug.com/img/trial/trial_bar_sprite.png) no-repeat -30px -40px; cursor: pointer" onclick="YD.get('shortLinkHeaderQS').style.display='none';"></div><div style="width: 25px; height: 25px; float: left; background: transparent url(http://cdn.smugmug.com/img/trial/trial_bar_sprite.png) no-repeat 0 -40px;"></div><div style="font-size: 18px; margin: 0 auto; text-align:center;width:500px;height: 26px;margin-top:0px;">Short URL: <span id="shortLinkQS" style="color:#fff;"></span><img  id="copyButtonQS" border="0" src="http://cdn.smugmug.com/img/spacer.gif" /></div><div class="spacer"></div></div>
+        <!-- These extra divs/spans may be used as catch-alls to add extra imagery. -->
+            <div id="extraDiv1"><span></span></div>
+            <div id="extraDiv2"><span></span></div>
+            <div id="extraDiv3"><span></span></div>
+            <div id="extraDiv4"><span></span></div>
+            <div id="extraDiv5"><span></span></div>
+            <div id="extraDiv6"><span></span></div>
+        <!-- Start Page Header -->
+        <div id="header_wrapper" class="top_border bottom_border">
+  <div id="header">
+    <a href="http://www.smugmug.com/" id="homelink" title="Photo Sharing & Video Hosting by SmugMug"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="Photo Sharing & Video Hosting by SmugMug" title="Photo Sharing & Video Hosting by SmugMug" width="116" height="24" hspace="0" vspace="0" border="0" class="smuglogo"></a>
+    <div id="toolbar" class="nav">
+        &nbsp;&nbsp;<a href="http://www.smugmug.com/" class="nav" title="Photo Sharing">Photo Sharing</a>&nbsp;&nbsp;<a href="https://secure.smugmug.com/login.mg?goTo=http%3A%2F%2Fboss.smugmug.com%2FOther%2F480-normalized-photos%2F9484560_B6pGVC" class="nav">Login</a>&nbsp;&nbsp;<a href="http://help.smugmug.com/" class="nav">Help</a>&nbsp;&nbsp;<form name="searchBox" id="searchBox" method="get" action="/search/" onsubmit="checkInput('Search','searchWordsShort','')"><input name="searchWordsShort" id="searchWordsShort" type="text" value="Search" onclick="checkInput('Search', 'searchWordsShort', '')" onblur="checkInput('', 'searchWordsShort', 'Search')"><input type="hidden" name="searchType" value="InAlbum"><input type="hidden" name="AlbumID" value="9484560">&nbsp;<input type="image" src="http://cdn.smugmug.com/img/spacer.gif" alt="Search Photos" title="Search Photos" class="searchglass" onclick="if(document.searchBox.searchWordsShort.value == 'Search') {document.searchBox.searchWordsShort.value = ' ';}"></form>
+    <script type="text/javascript">
+        function styleBarChange(cookieType, comboBox) {
+          var cookieData = {
+            tool : 'setCookie',
+            value : comboBox.options[comboBox.selectedIndex].value,
+            type: cookieType
+          };
+          var tmpArray = new Array();
+          for(var i in cookieData) {
+            tmpArray.push(i+"="+cookieData[i]);
+          }
+          var postData = tmpArray.join('&');
+          var broken = function() {
+            // the call broke, reload?
+          };
+          var reloadPage = function(o) {
+            location.reload();
+          };
+          var callback = {
+            success: reloadPage,
+            failure: broken,
+            scope: this
+          };
+          // update the display how many we have sent
+          var cookieRequest = YAHOO.util.Connect.asyncRequest(
+            'POST','/rpc/settings.mg', callback, postData);
+        }
+    </script><div id="stylebar" class="nav"><form name="template_chooser" action="" method="get"></form></div>&nbsp;
+    </div>
+    <div class="spacer"></div>
+  </div>
+</div>
+ <!-- ----------------------- END CONTROLLED HEADER -----------------------  -->
+
+
+<script type="text/javascript">
+    YE.addListener(window, 'load', function(e) {
+        var hashInfo = SM.navigation.getAjaxHashInfo(getHash());
+        if (hashInfo.lightbox) {
+            openLB(hashInfo.imageId, hashInfo.imageKey, hashInfo.lightboxSize, hashInfo.lightbox);
+        }
+    });
+            NickName = 'BOSS';
+        var guestPage = false;
+    pageType = 'Album';
+    pageTypeDetails = '';
+    pageScope = '';
+    pageDrawBy = '';
+                siteUser = 'BOSS';
+            community = '';
+            galleryStyle = 'smugmug_small';
+            AlbumID = '9484560';
+            AlbumKey = 'B6pGVC';
+            ImageID = '888830119';
+            ImageKey = 'RMZfd';
+            webServer = 'http://boss.smugmug.com';
+            commentLink = "/Other/480-normalized-photos/9484560_B6pGVC/1/888830119_RMZfd/Medium#comment";
+                                                    var imageIDs = new Array();
+mainPhotoFileName = 'waterbottle01b';</script>
+<div id="smugmug_small" class="smugmug_small galleryPage gallery_9484560 tempClass category_Other notLoggedIn pureSmugCSS bodyColor_Black">
+        <div id="breadcrumb" class="nav">
+<div id="altViews" >
+<div id="fsssButton"></div>
+</div>
+<div id="breadCrumbTrail"><a href="http://boss.smugmug.com"
+	class="nav">BOSS</a>
+              &nbsp;&gt;&nbsp;<a
+	href="http://boss.smugmug.com/Other"
+	class="nav">Other</a>&nbsp;&gt;&nbsp;<span class="title" id="albumTitle">480 normative images</span>        </div>
+<div class="spacer"></div>
+</div>
+
+<script type="text/javascript">
+
+    YE.onDOMReady(function() {
+
+
+    	SM.buttons.viewingStylesButton = new SM.buttons.viewingStyles('altViews','viewingStylesButton', {"styles":[{"id":3,"name":"SmugMug"},{"id":17,"name":"Thumbnails"},{"id":8,"name":"Slideshow"},{"id":16,"name":"Journal"},{"id":10,"name":"SmugMug Small"}],"selectedStyleID":0,"selectedStyle":3});
+      SM.buttons.shareButton = new SM.buttons.share('altViews','shareButton',{"owner":false,"pageType":"Album","followLinks":[],"showBesocial":1,"ownerShare":0,"adminMenu":false,"lazyLoad":"\/\/cdn.smugmug.com\/include\/js\/zeroclipboard-20110331180142.js"});
+
+      // Slideshow button
+      SM.buttons.slideshowButton = new SM.buttons.slideshow('altViews','slideshowButton',{"slideshowDiv":"fsssButton","flashVars":null,"galleryInfo":{"galleryType":"Album","userNickName":"BOSS","albumId":9484560,"albumKey":"B6pGVC"}});
+
+
+    },this);
+
+  </script>
+                <div id="albumNav_top" class="top_border bottom_border albumNav">
+            <div class="pageNav leftColumn nav">
+                     <span class="title">gallery pages:</span>&nbsp;&nbsp;<span class="navPageOn">1</span>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/2" class="nav">2</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/3" class="nav">3</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/4" class="nav">4</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/5" class="nav">5</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/6" class="nav">6</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/2" class="nav">&gt;</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/54" class="nav">&gt;&gt;</a>                <div class="spacer"></div>
+            </div>
+            <div class="left_border photoNav rightColumn nav">
+                            <div id="cartButtonsWrapper" class="cartbuttons nav"></div>
+    <script type="text/javascript">
+        YE.onDOMReady(function() {
+            SM.buttons.buyButton = new SM.buttons.buy('cartButtonsWrapper','buyButton',{"batchAddExtra":"","isPro":false,"userId":430813,"hasPackages":false,"nglazeURL":"http:\/\/smugmug.nglaze.com\/BulkBackup\/order.aspx?AccountPath=BOSS-smugsec-YH.4F1-smugsec-\/A9484560&BackupSize=427&ReturnURL=http%3A%2F%2Fboss.smugmug.com%2FOther%2F480-normalized-photos%2F9484560_B6pGVC&AccountId=BOSS&Title=Gallery:+480+normative+images&IsAlbum=true","disableSingleImagePrint":false,"allowGuestCards":true,"freeTrial":false});
+            SM.buttons.cartButton = new SM.buttons.viewCart('cartButtonsWrapper','cartButton',{"back2Shop":"http%3A%2F%2Fboss.smugmug.com%2FOther%2F480-normalized-photos%2F9484560_B6pGVC"});
+        });
+    </script>                            &lt;                        <span class="title">1 of 480</span>
+                                    <a href="http://boss.smugmug.com/Other/480-normalized-photos/9484560_B6pGVC/888830173_9LofE" class="nav">&gt;</a>                            </div>
+                            <div class="spacer"></div>
+                            </div>
+                            <div id="photos">
+                                <div id="thumbnails" class="leftColumn">
+                                                                                <div class="photo"><a title="waterbottle01b" href="/Other/480-normalized-photos/9484560_B6pGVC/1/888830119_RMZfd"><img title="waterbottle01b" alt="waterbottle01b" src="http://boss.smugmug.com/Other/480-normalized-photos/waterbottle01b/888830119_RMZfd-Ti.jpg" width="100" height="100" hspace="0" vspace="0" border="0"  class="imgBorder"  /></a></div>
+                                                                            <div class="photo"><a title="waterbottle03" href="/Other/480-normalized-photos/9484560_B6pGVC/1/888830173_9LofE"><img title="waterbottle03" alt="waterbottle03" src="http://boss.smugmug.com/Other/480-normalized-photos/waterbottle03/888830173_9LofE-Ti.jpg" width="100" height="100" hspace="0" vspace="0" border="0"  class="imgBorder"  /></a></div>
+                                                                            <div class="photo"><a title="watch02a" href="/Other/480-normalized-photos/9484560_B6pGVC/1/888830086_ryFS8"><img title="watch02a" alt="watch02a" src="http://boss.smugmug.com/Other/480-normalized-photos/watch02a/888830086_ryFS8-Ti.jpg" width="100" height="100" hspace="0" vspace="0" border="0"  class="imgBorder"  /></a></div>
+                                                                            <div class="photo"><a title="walnut01c" href="/Other/480-normalized-photos/9484560_B6pGVC/1/888830062_Gseue"><img title="walnut01c" alt="walnut01c" src="http://boss.smugmug.com/Other/480-normalized-photos/walnut01c/888830062_Gseue-Ti.jpg" width="100" height="100" hspace="0" vspace="0" border="0"  class="imgBorder"  /></a></div>
+                                                                            <div class="photo"><a title="wallet02a" href="/Other/480-normalized-photos/9484560_B6pGVC/1/888829984_Kbpx4"><img title="wallet02a" alt="wallet02a" src="http://boss.smugmug.com/Other/480-normalized-photos/wallet02a/888829984_Kbpx4-Ti.jpg" width="100" height="100" hspace="0" vspace="0" border="0"  class="imgBorder"  /></a></div>
+                                                                            <div class="photo"><a title="wallet04" href="/Other/480-normalized-photos/9484560_B6pGVC/1/888830017_6PvEy"><img title="wallet04" alt="wallet04" src="http://boss.smugmug.com/Other/480-normalized-photos/wallet04/888830017_6PvEy-Ti.jpg" width="100" height="100" hspace="0" vspace="0" border="0"  class="imgBorder"  /></a></div>
+                                                                            <div class="photo"><a title="wateringcan" href="/Other/480-normalized-photos/9484560_B6pGVC/1/888830235_ZCdpy"><img title="wateringcan" alt="wateringcan" src="http://boss.smugmug.com/Other/480-normalized-photos/wateringcan/888830235_ZCdpy-Ti.jpg" width="100" height="100" hspace="0" vspace="0" border="0"  class="imgBorder"  /></a></div>
+                                                                            <div class="photo"><a title="watermelon" href="/Other/480-normalized-photos/9484560_B6pGVC/1/888830276_SDCm8"><img title="watermelon" alt="watermelon" src="http://boss.smugmug.com/Other/480-normalized-photos/watermelon/888830276_SDCm8-Ti.jpg" width="100" height="100" hspace="0" vspace="0" border="0"  class="imgBorder"  /></a></div>
+                                                                            <div class="photo"><a title="wineglass01" href="/Other/480-normalized-photos/9484560_B6pGVC/1/888830416_6RXwP"><img title="wineglass01" alt="wineglass01" src="http://boss.smugmug.com/Other/480-normalized-photos/wineglass01/888830416_6RXwP-Ti.jpg" width="100" height="100" hspace="0" vspace="0" border="0"  class="imgBorder"  /></a></div>
+                                                                </div>
+                                <div id="displayPhoto" class="left_border rightColumn" itemscope itemtype="schema.org/ImageObject">
+                                                                            <div id="caption_top" class="caption bottom_border">
+         waterbottle01b                                                                                </div>
+                                                                        <div class="photo"><a title="waterbottle01b" href="javascript:openLB(888830119,'',XLarge,'',768,768);"><img title="waterbottle01b" alt="waterbottle01b" src="http://boss.smugmug.com/Other/480-normalized-photos/waterbottle01b/888830119_RMZfd-L.jpg" itemprop="contentURL" width="600" height="600" class="imgBorder" hspace="0" vspace="0" border="0"   onmouseover="smugPopular(this.id, ImageID, ImageKey);" id="mainImage" name="mainImage" /></a></div>
+                                <meta itemprop="thumbnail" content="http://boss.smugmug.com/Other/480-normalized-photos/waterbottle01b/888830119_RMZfd-Th.jpg" />
+                                    <meta itemprop="contentSize" content="33049" />
+                                    <meta itemprop="uploadDate" content="2010-06-03T13:26:25-0700" /><meta itemprop="author" content="BOSS" />                                            <div id="caption_bottom" class="caption bottom_border" itemprop="caption"> waterbottle01b</div>                                                                        <div id="imageInfo" class="note nav">
+                                                                                        <div class="photoDetail" id="exifOriginalSize"><span class="title">Original size:</span> <span class="foreground">2000x2000</span> |</div>
+                                            <div class="photoDetail" id="detailsCurrentSize"><span class="title">Current:</span> <span class="foreground"><span itemprop="width">600</span>x<span itemprop="height">600</span></span> |</div>
+                                                                                    <div class="photoDetail" id="detailsSharePhoto"><span class="title">Share photo:</span> <a href="/gallery/share.mg?AlbumID=9484560&Page=1&ImageID=888830119&ImageKey=RMZfd">links, forums, blogs</a> |</div>
+                                                 <div class="photoDetail" id="photoKeywords"><span class="title">Keywords:</span> <a href="/keyword/waterbottle01b">waterbottle01b</a> </div>
+                                                                            </div>
+                                </div>
+                                <div class="spacer"></div>
+                            </div>
+                            <div id="albumNav_bottom" class="top_border albumNav">
+                                <div class="pageNav leftColumn nav">
+                                             <span class="title">gallery pages:</span>&nbsp;&nbsp;<span class="navPageOn">1</span>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/2" class="nav">2</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/3" class="nav">3</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/4" class="nav">4</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/5" class="nav">5</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/6" class="nav">6</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/2" class="nav">&gt;</a>&nbsp;&nbsp;<a href="/Other/480-normalized-photos/9484560_B6pGVC/54" class="nav">&gt;&gt;</a>                                </div>
+                                <div class="photoNav rightColumn nav">
+                                                &lt;                                            <span class="title">1 of 480</span>
+                                                <a href="http://boss.smugmug.com/Other/480-normalized-photos/9484560_B6pGVC/888830173_9LofE" class="nav">&gt;</a>                                                </div>
+                                                <div class="spacer"></div>
+                                                </div>
+                                                <div id="fb-root"></div><script type="text/javascript">
+var toggle = function() {
+    toggleDIV('addAlbumComment','toggleAlbumComment', 'block');
+    redoCaptcha('Album','');};
+
+YE.onAvailable('toggleAlbumComment', function() {
+    function showCommentEntry(p_oEvent) {
+        toggle();
+                SM.FBAttach(function(){
+
+                var settings = {settings: {useWelcomeMessage : false, requiredPermissions : 'email'}};
+
+                var events = {events : {eventsComplete : fbLogin, logout : fbLogout}};
+
+                var cssOnWrapUp = {onWrapUp :{'fbButton' : 'display'}};
+
+                fbObject.config(settings);
+                fbObject.config(events);
+                fbObject.config(cssOnWrapUp);
+
+
+                fbObject.init();
+                //The ID of where you want the button
+                fbObject.renderButton('facebookButton');
+
+            }); //End SM.FBAttach
+        }
+
+    SM.buttons.addCommentButton = new YAHOO.widget.Button({
+        id: 'addcommentButton',
+        label: 'Add Comment', 
+        container: 'toggleAlbumComment',
+        className: 'sm-button sm-button-small addcommentButton glyphButton',
+        onclick: { fn: showCommentEntry }
+    });
+
+});   
+        
+var fbLogin = function(response){
+    var fbUserData = fbObject.getUserData(
+        function(userProfile, safeUserData, response){
+
+            UserData  = '<div id="user" class="user" style="float:left;padding:5px;">';
+            UserData += fbObject.renderWelcomeMessage(undefined,undefined,true);
+            UserData += '<input type="hidden" name="ServiceID" id="ServiceID"  value="1" />';
+            UserData += '<input type="hidden" name="albumCommentEmail" id="albumCommentEmail" value="' + userProfile.accountEmail + '" />';
+            UserData += '<input type="hidden" name="SocialID"  id="SocialID" value="' + userProfile.accountID + '" />';
+            UserData += '<input type="hidden" name="albumCommentName" id="albumCommentName" value="' + userProfile.accountName + '" />';
+            UserData += '<input type="hidden" name="albumCommentLink" id="albumCommentLink" value="' + userProfile.accountLink + '" />';
+            UserData += '</div><br />';
+
+            YD.get('user').innerHTML = UserData;
+
+            YD.get('galleryCommentCaptcha').innerHTML = '<input type="hidden" name="noCaptchaNeeded" id="noCaptchaNeeded" value="true" />';
+
+        } //end function
+    );
+} //end fbLogin
+
+function fbLogout(){
+        YD.addClass(document.body, 'masked');
+        //YD.get('FBConnectButton').innerHTML = '<span id="facebookButton"></span>';
+        YD.get('user').innerHTML = '<span class="title">Name:</span> <input type="text" name="albumCommentName" id="albumCommentName" style="width: 100px" /> <span class="title">Email:</span> <input type="text" name="albumCommentEmail" id="albumCommentEmail" style="width: 100px" /> <span class="title">Link:</span>  <input type="text" name="albumCommentLink" id="albumCommentLink" style="width: 100px" />';
+        fbObject.renderButton('facebookButton',undefined,undefined,undefined,true);
+        YD.removeClass(document.body, 'masked');
+}
+
+
+function disableField(){
+    if(YD.get('albumCommentEmail').disabled==true) {
+        YD.get('albumCommentEmail').disabled=false;
+        YD.get('albumCommentEmail').value='';
+    } else {
+        YD.get('albumCommentEmail').disabled=true;
+        YD.get('albumCommentEmail').value='';
+    }
+}
+
+</script>
+    <div id="comment" class="top_border"  >
+        <a name="comment"></a>
+        <div id="comment_header">
+            <div id="comment_nav" class="nav"></div>
+            <span class="nav">
+            <h3 class="title nomargin">
+             Comments</h3>
+            
+            
+                        <span id="hideGalleryComments" style="display: none"> |
+                <a href="javascript:changeGalleryComments();" class="nav" id="showGalleryComments" style="cursor: pointer;">
+                                hide gallery comments
+                                </a>
+            </span>
+                        <span class="nav" id="toggleAlbumComment" > | </span>
+            </span>
+            <div class="spacer"></div>
+        </div>
+        <div id="addAlbumComment">
+            <h3 class="title notopmargin">New comment: <span id="commentApproval" class="copy alert" style="display: none">Requires approval</span></h3>
+
+
+            
+            
+
+    <div id="user" class="user" style="float:left;padding:5px;">
+    <span class="title">Name:</span> <input type="text" name="albumCommentName" id="albumCommentName" style="width: 100px" />
+    <span class="title">Email:</span> <input type="text" name="albumCommentEmail" id="albumCommentEmail" style="width: 100px" /> 
+    <span class="title">Link:</span>  <input type="text" name="albumCommentLink" id="albumCommentLink" style="width: 100px" />
+    </div> 
+    
+            <div style="float:left;padding:5px;margin-top:2px;color:#ffffff;vertical-align: top;" id="FBConnectButton">
+            <span id="facebookButton"></span>
+                </div>
+    
+
+            <br /><textarea id="albumComment" ></textarea><br />
+
+            <div id="galleryCommentRating" class="nav">
+                 
+                                            <span class="title">Comment on:</span>
+                        <select id="commentType" name="commentType">
+                            <option value="choose a type"  selected="selected">Choose a type</option>
+                            <option value="Image">This photo</option>
+                            <option value="Album">Entire gallery</option>
+                        </select>
+                                 |
+                                                    
+                <span class="title">Rating:</span>
+                <select id="albumCommentRating" name="albumCommentRating">
+                    <option value="0">Don't rate</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select> stars
+            </div>
+            
+
+                            <div id="galleryCommentCaptcha" style="padding:5px;"><span class="title" id="AlbumCaptchaConfirm">To foil spammers, enter this code: <img src="/img/spacer.gif" alt="copy this text" title="copy this text" width="100" height="20" hspace="0" vspace="0" border="0" id="AlbumCaptchaSource" name="AlbumCaptchaSource" /> in this box:</span> <input type="text" name="AlbumCaptcha" id="AlbumCaptcha" style="width: 100px;" value="" /> <a href="javascript:redoCaptcha('Album','');">Code unreadable?</a></div>
+                        <br />
+            <span class="sm-button sm-button-small yui-button">
+                <span class="first-child">
+                    <a href="javascript: void(0);" onclick="submitComment();">Add Comment</a>
+                </span>
+            </span>
+            <span class="sm-button sm-button-small yui-button">
+                <span class="first-child">
+                    <a href="javascript: void(0);" onclick="toggleDIV('toggleAlbumComment','addAlbumComment',  'inline');">Cancel</a>
+                </span>
+            </span>
+            <br /><br />        
+    </div>
+        <div id="comments"></div>
+    </div>
+
+
+                                                    </div>
+        <!-- End Content -->
+
+    <!-- Start Footer -->
+
+    
+        <script src="http://cdn.smugmug.com/include/js/yui_gallery_bundle-2ad7b692004c76943906c8ff1817eefe.js" class="js script yui_gallery_bundle" type="text/javascript" charset="utf-8"></script>
+        <script src="http://cdn.smugmug.com/include/js/smugmug_gallery_bundle-9c42ce297348e93102bd0b3f39fff90e.js" class="js script smugmug_gallery_bundle" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            <!--
+        // IE has issues with setting cookies when sites are framed, so logging in and using the cart do not work. So we have to break frames!
+                    // -->
+            (function() {
+                    if(typeof readCookie  != "undefined") {
+                        var sRes;
+
+                        if (typeof(screen) == 'object'){
+                            sRes = screen.width + 'x' + screen.height;
+                        }
+
+                        if (readCookie('res') != sRes) {
+                            createCookie('res', sRes, 365);
+                        }
+                    }
+                })();
+        </script>
+    <div id="footer_wrapper" class="top_border" style="visibility: visible; display: block; clear: both;">
+
+        <div id="footer" class="nav" style="visibility: visible; display: block; ">
+        <a href="http://www.smugmug.com/" class="nav" title="Photo Sharing">Photo Sharing</a> &#183;             <a href="http://www.smugmug.com/about/" class="nav">About SmugMug</a>  &#183;
+            <a href="http://www.smugmug.com/browse/" class="nav">Browse Photos</a> &#183;
+            <a href="http://www.smugmug.com/prints/catalog/P" class="nav">Prints &amp; Gifts</a> &#183;
+                        <a href="http://www.smugmug.com/aboutus/terms/" class="nav" rel="nofollow">Terms</a> &#183;
+            <a href="http://www.smugmug.com/aboutus/privacy/" class="nav" rel="nofollow">Privacy</a> &#183;
+    <a href="http://help.smugmug.com/" class="nav">Contact</a> &#183;
+            <a rel="nofollow" onmousedown="changeRedirectForAjax(this);" href="https://secure.smugmug.com/login.mg?goTo=http%3A%2F%2Fboss.smugmug.com%2FOther%2F480-normalized-photos%2F9484560_B6pGVC" class="nav">Login</a>            <br/>
+            <span class="text">&copy; 2012 SmugMug, Inc.</span>
+                </div>
+            <div id="feeds" class="nav">
+        <div id="feedHelp" class="nav">
+            <a rel="nofollow" href="javascript:toggleHeight('allFeeds');"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="Show Feeds" title="Show Feeds" width="16" height="16" hspace="0" vspace="0" border="0" class="feedStandard" /></a><a href="javascript:toggleHeight('allFeeds');" class="nav">Available Feeds</a>
+        </div>
+        <div id="allFeeds">
+                    <div class="feedLine">
+                <div class="feedName nav note">Gallery Photos:</div>
+                                <a href="/hack/feed.mg?Type=gallery&amp;Data=9484560_B6pGVC&amp;format=atom10"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="Atom Feed" title="Atom Feed" width="16" height="16" hspace="0" vspace="0" border="0" class="atomfeed" /></a><a href="/hack/feed.mg?Type=gallery&amp;Data=9484560_B6pGVC&amp;format=atom10" class="nav">Atom</a>
+                | <a href="/hack/feed.mg?Type=gallery&amp;Data=9484560_B6pGVC&amp;format=rss200"><img src="http://cdn.smugmug.com/img/spacer.gif" alt="RSS Feed" title="RSS Feed" width="16" height="16" hspace="0" vspace="0" border="0" class="rssfeed" /></a><a href="/hack/feed.mg?Type=gallery&amp;Data=9484560_B6pGVC&amp;format=rss200" class="nav">RSS</a>
+                                        <div class="spacer"></div>
+            </div>
+                    <div class="spacer"></div>
+        </div>
+    </div>
+            </div>
+                    <!-- End Footer -->
+            <div id="lightBoxStage" style="display: none;">
+            <div id="lightBoxBG"></div>
+            <div id="lightBoxFG">
+                <div id="lightBoxNav" class="nav"></div>
+                    <div id="lightBoxPhoto"></div>
+                <div id="lightBoxCaption"></div>
+                </div>
+        </div>
+        
+
+
+        <script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src="https://d1ros97qkrwjf5.cloudfront.net/29/eum/rum.js";document.body.appendChild(e);};if(window.addEventListener){window.addEventListener('load',NREUMQ.f,false);}else if(window.attachEvent){window.attachEvent('onload',NREUMQ.f);}};NREUMQ.push(["nrf2","beacon-1.newrelic.com","d7cf326645",467408,"ZlIEMEJQCENYUhBeWl8YJRFDRQldFlYFW1lURR9LRlgDRw==",0,99,new Date().getTime()])</script>
+        </body>
+    </html>
+    

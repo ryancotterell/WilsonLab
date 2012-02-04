@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+    use strict;
+    use WWW::Mechanize::Firefox;
+    
+my $url = "http://boss.smugmug.com/Other/480-normalized-photos/9484560_B6pGVC#!i=888829723&k=gTxbD";
+my $mech = WWW::Mechanize::Firefox->new();
+$mech->get($url);
+    
+my @links = $mech->selector('a');
+$mech->highlight_node(@links);
+
+for my $link (@links) {
+    print $link->__id, "\n";
+    print $link->{href}, "\n\n";
+}

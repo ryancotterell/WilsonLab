@@ -16,8 +16,8 @@ my $count2 = 0;
 while (<FILE>) {
     my @data = split(/\t\t/, $_);
     
-    if ($data[2] =~ m/^(p|t|k).*/g) {
-	push(@set1, $data[2]);
+    if ($data[2] !~ m/^(g|b|d|k|p|t).*/g) {
+	push(@set1, @data);
 	$count1++;
     }
     else {
@@ -26,10 +26,12 @@ while (<FILE>) {
     }
 }
 
-#print @set1;
-#print $count1, "\n";
-print;
-print;
-print;
-print @set2;
-print $count2, "\n";
+
+
+for (@set1) {
+    for ($_) {
+	print $_, "\t\t";
+    }
+}
+#print @set2;
+#print $count2, "\n";

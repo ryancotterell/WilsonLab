@@ -251,10 +251,10 @@ class Experiment1:
         f = open(filename,'r')
 
         lines = f.read().splitlines()
-        if len(lines) % self.images_multiple != 0:
-            raise Exception("The number of trials must be divisible by %d" % self.images_multiple)
-
+    
         self.possibleLocations = self.generatePermutations(len(lines))
+        print self.possibleLocations
+        sleep(40)
 
         #analyze the file line by line
         for line in lines:
@@ -379,6 +379,7 @@ class Experiment1:
  
     def generatePermutations(self, n):
         n = n / self.images_multiple
+        remainder = n % self.images_multiple
         s = set([0,1,2,3])
         imageArrangements = list(permutations(s, 2))
         
@@ -390,6 +391,7 @@ class Experiment1:
             permutList.append(arrangement)
 
         permutList = permutList * n
+        permutList += permutList[0:remainder]
         shuffle(permutList)
         return permutList
 

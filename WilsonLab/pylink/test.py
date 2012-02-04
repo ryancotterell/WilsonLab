@@ -11,7 +11,6 @@ from wilsonLab import Experiment1, Familiarization
 
 #setup window
 win = visual.Window(size=(400, 400), fullscr=False
-
 , screen=0, 
                     allowGUI=True,
                     allowStencil=False,
